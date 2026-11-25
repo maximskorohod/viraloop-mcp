@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "viraloop": {
+      "type": "http",
+      "url": "https://api.getviraloop.com/mcp"
+    }
+  }
+}

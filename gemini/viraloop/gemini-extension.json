@@ -1,0 +1,11 @@
+{
+  "name": "viraloop",
+  "version": "0.2.0",
+  "description": "Автомонтаж рилсов Viraloop: паузы, паразиты, возврат фраз, варианты. Edit reels via the Viraloop MCP server.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "viraloop": {
+      "httpUrl": "https://api.getviraloop.com/mcp"
+    }
+  }
+}
