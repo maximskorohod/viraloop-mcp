@@ -1,0 +1,32 @@
+{
+  "name": "dsh-viraloop",
+  "version": "0.3.0",
+  "description": "Viraloop for DeepSeek Harness: edit talking-head reels from your agent via the hosted Viraloop MCP server.",
+  "license": "MIT",
+  "author": "Viraloop (https://getviraloop.com)",
+  "homepage": "https://getviraloop.com/mcp/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximskorohod/viraloop-mcp.git",
+    "directory": "deepseek"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "mcp",
+    "viraloop",
+    "video",
+    "reels"
+  ],
+  "files": [
+    "cordis.patch.yml",
+    "skills",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

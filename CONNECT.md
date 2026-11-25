@@ -37,6 +37,23 @@ hermes plugins install maximskorohod/viraloop-mcp --enable
 ```
 Вход при первом вызове. Подробно и запасной путь по ключу: `hermes/README.md`.
 
+## Kimi Code
+В Kimi Code (в терминале) по очереди:
+```
+/plugins install https://github.com/maximskorohod/viraloop-mcp
+/reload
+/mcp-config login viraloop
+```
+Последняя команда откроет вход Viraloop в браузере. Старый `kimi-cli`:
+`kimi mcp add --transport http --auth oauth viraloop https://api.getviraloop.com/mcp`, затем `kimi mcp auth viraloop`.
+
+## DeepSeek Harness
+У встроенного клиента MCP в DSH пока нет OAuth, поэтому вход по ключу:
+1. Кабинет, «ИИ», «Новый ключ» (права и дневной лимит).
+2. В DSH сохранить его как секрет `VIRALOOP_MCP_TOKEN` (Настройки, ключи) или строкой в `~/.dsh/.env`.
+3. `dsh plugin --profile desktop add github:maximskorohod/viraloop-mcp#path:/deepseek`, перезапустить DSH.
+4. Правила: папку `deepseek/skills/viraloop` в `~/.agents/skills/viraloop`.
+
 ## Claude (claude.ai, Desktop, телефон)
 1. Настройки, «Коннекторы», «Добавить свой коннектор».
 2. Название `Viraloop`, адрес `https://api.getviraloop.com/mcp`.

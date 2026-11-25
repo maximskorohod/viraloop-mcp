@@ -13,7 +13,8 @@ agent may do (view, edit, spend credits within a daily limit). Revoke access any
 
 ## Quick start
 
-This repo is one plugin (skill + server connection) that Claude Code, Codex, Hermes, Cursor and Gemini CLI all read.
+This repo is one plugin (skill + server connection) that Claude Code, Codex, Hermes, Cursor, Gemini CLI and Kimi Code
+all read, plus a DeepSeek Harness package in `deepseek/`.
 
 **Claude Code**
 ```
@@ -38,6 +39,18 @@ Sign in on first use. Details and a key-based fallback: `hermes/README.md`.
 **Gemini CLI**
 ```
 gemini extensions install https://github.com/maximskorohod/viraloop-mcp
+```
+
+**Kimi Code** (in the TUI)
+```
+/plugins install https://github.com/maximskorohod/viraloop-mcp
+/reload
+/mcp-config login viraloop
+```
+
+**DeepSeek Harness**: key-based (its MCP client has no OAuth yet), see `deepseek/README.md`:
+```
+dsh plugin --profile desktop add github:maximskorohod/viraloop-mcp#path:/deepseek
 ```
 
 **Cursor**: add to `~/.cursor/mcp.json`:

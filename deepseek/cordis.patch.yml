@@ -1,0 +1,21 @@
+# dsh-viraloop: bundle patch layer for DeepSeek Harness.
+#
+# A carrier bundle: it ships no code, it mounts one row against the MCP client bridge
+# that already ships inside DeepSeek Harness (@deepseek-ai/dsh-mcp-client).
+# Tools appear as mcp__viraloop__<tool> (get_balance, start_job, get_plan, revise, ...).
+#
+# The bridge has no OAuth, so it sends a Viraloop MCP key: create one in the Viraloop
+# dashboard ("AI" tab, "New key") and save it in DSH as the credential VIRALOOP_MCP_TOKEN
+# (Settings, credentials) or put VIRALOOP_MCP_TOKEN=... into $DSH_HOME/.env.
+# Without the key the row waits for the credential and DSH starts normally.
+- insert:
+    - id: viraloop-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: viraloop
+        transport: streamable-http
+        url: https://api.getviraloop.com/mcp
+        expandTemplates: true
+        headers:
+          Authorization: 'Bearer ${credential:VIRALOOP_MCP_TOKEN}'
+        toolCallTimeoutMs: 120000
