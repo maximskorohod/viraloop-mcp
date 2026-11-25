@@ -22,11 +22,26 @@
 Или только сервер: `claude mcp add --transport http viraloop https://api.getviraloop.com/mcp`.
 Затем команда `/mcp`, пункт viraloop, «Authenticate».
 
+## Codex (CLI и приложение)
+Плагин ставит правила и подключение:
+```
+codex plugin marketplace add maximskorohod/viraloop-mcp
+codex plugin add viraloop@viraloop
+codex mcp login viraloop
+```
+Или только сервер: `codex mcp add viraloop --url https://api.getviraloop.com/mcp`, затем `codex mcp login viraloop`.
+
+## Hermes Agent
+```
+hermes plugins install maximskorohod/viraloop-mcp --enable
+```
+Вход при первом вызове. Подробно и запасной путь по ключу: `hermes/README.md`.
+
 ## Claude (claude.ai, Desktop, телефон)
 1. Настройки, «Коннекторы», «Добавить свой коннектор».
 2. Название `Viraloop`, адрес `https://api.getviraloop.com/mcp`.
 3. «Подключить»: откроется страница Viraloop, войдите кодом из письма и нажмите «Разрешить».
-Скилл с правилами работы: папка `claude/skills/viraloop` zip-архивом в Настройки, Возможности, Скиллы.
+Скилл с правилами работы: папка `skills/viraloop` zip-архивом в Настройки, Возможности, Скиллы.
 
 ## ChatGPT
 1. Настройки, «Приложения и коннекторы», «Дополнительно», включить режим разработчика.
@@ -40,29 +55,12 @@
 ```
 В настройках Cursor, раздел MCP, у viraloop нажать «Login». Правила для агента: `cursor/viraloop.mdc` в `.cursor/rules/`.
 
-## Codex CLI
-```
-codex mcp add viraloop --url https://api.getviraloop.com/mcp
-codex mcp login viraloop
-```
-Правила: `codex/AGENTS.md` в корень проекта.
-
 ## Gemini CLI
 ```
-gemini extensions install https://github.com/maximskorohod/viraloop-mcp --path gemini/viraloop
+gemini extensions install https://github.com/maximskorohod/viraloop-mcp
 ```
 или в `~/.gemini/settings.json`: `"mcpServers": { "viraloop": { "httpUrl": "https://api.getviraloop.com/mcp" } }`.
 При первом вызове Gemini CLI откроет вход сам (или команда `/mcp auth viraloop`).
-
-## Hermes Agent
-Подробно: `hermes/README.md`. Коротко, в `~/.hermes/config.yaml`:
-```yaml
-mcp_servers:
-  viraloop:
-    url: https://api.getviraloop.com/mcp
-    auth: oauth
-```
-Затем `hermes mcp login viraloop`.
 
 ## Если не подключается
 - «Запрос устарел»: страница входа живёт 15 минут, начните подключение заново.

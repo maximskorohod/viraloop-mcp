@@ -1,0 +1,19 @@
+{
+  "name": "viraloop",
+  "version": "0.3.0",
+  "description": "Viraloop: auto-editing of talking-head reels (pauses, filler words, retakes) from your AI agent via MCP.",
+  "homepage": "https://getviraloop.com/mcp/",
+  "repository": "https://github.com/maximskorohod/viraloop-mcp",
+  "license": "MIT",
+  "author": {
+    "name": "Viraloop",
+    "url": "https://getviraloop.com"
+  },
+  "keywords": [
+    "video",
+    "reels",
+    "editing",
+    "mcp",
+    "shorts"
+  ]
+}

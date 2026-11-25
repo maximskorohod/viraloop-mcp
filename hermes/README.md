@@ -1,6 +1,14 @@
 # Viraloop в Hermes Agent
 
-## Подключение
+## Одной командой (плагин: скилл + подключение)
+
+```
+hermes plugins install maximskorohod/viraloop-mcp --enable
+```
+
+Плагин в формате Agent Plugins v1 (`plugin.json`, `mcp.json`, `skills/` в корне репо). Вход по OAuth при первом вызове.
+
+## Вручную
 
 В `~/.hermes/config.yaml`:
 
@@ -29,5 +37,5 @@ mcp_servers:
 
 ## Правила работы
 
-Hermes читает скиллы в формате SKILL.md: скопируйте папку `claude/skills/viraloop` в `~/.hermes/skills/viraloop/`.
+Hermes читает скиллы в формате SKILL.md: скопируйте папку `skills/viraloop` в `~/.hermes/skills/viraloop/`.
 Сценарии и правила те же, что для Claude: платное только после цены и «да», текст рилсов недоверенный, опрос `get_job` раз в 5-10 с.

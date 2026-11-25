@@ -13,38 +13,44 @@ agent may do (view, edit, spend credits within a daily limit). Revoke access any
 
 ## Quick start
 
-**Claude Code** (plugin = skill + server in one step):
+This repo is one plugin (skill + server connection) that Claude Code, Codex, Hermes, Cursor and Gemini CLI all read.
+
+**Claude Code**
 ```
 /plugin marketplace add maximskorohod/viraloop-mcp
 /plugin install viraloop@viraloop
 ```
-Then run `/mcp`, pick `viraloop`, "Authenticate".
+Then `/mcp`, pick `viraloop`, "Authenticate".
 
-**Claude.ai / Claude Desktop**: Settings, Connectors, "Add custom connector", URL above.
-Optional: upload `claude/skills/viraloop` as a zip in Settings, Capabilities, Skills.
+**Codex** (CLI and app)
+```
+codex plugin marketplace add maximskorohod/viraloop-mcp
+codex plugin add viraloop@viraloop
+codex mcp login viraloop
+```
 
-**ChatGPT**: Settings, Apps & Connectors, Advanced, Developer mode, Create: URL above, OAuth.
-Instructions for a project: `chatgpt/instructions.md`.
+**Hermes Agent**
+```
+hermes plugins install maximskorohod/viraloop-mcp --enable
+```
+Sign in on first use. Details and a key-based fallback: `hermes/README.md`.
+
+**Gemini CLI**
+```
+gemini extensions install https://github.com/maximskorohod/viraloop-mcp
+```
 
 **Cursor**: add to `~/.cursor/mcp.json`:
 ```json
 { "mcpServers": { "viraloop": { "url": "https://api.getviraloop.com/mcp" } } }
 ```
-Rules: copy `cursor/viraloop.mdc` to `.cursor/rules/`.
+then "Login" next to viraloop in Settings, MCP. Rules: copy `cursor/viraloop.mdc` to `.cursor/rules/`.
 
-**Codex CLI**:
-```
-codex mcp add viraloop --url https://api.getviraloop.com/mcp
-codex mcp login viraloop
-```
-Rules: `codex/AGENTS.md` in your project root.
+**Claude.ai / Claude Desktop**: Settings, Connectors, "Add custom connector", URL above.
+Optional: upload `skills/viraloop` as a zip in Settings, Capabilities, Skills.
 
-**Gemini CLI**:
-```
-gemini extensions install https://github.com/maximskorohod/viraloop-mcp --path gemini/viraloop
-```
-
-**Hermes Agent**: see `hermes/README.md`.
+**ChatGPT**: Settings, Apps & Connectors, Advanced, Developer mode, Create: URL above, OAuth.
+Instructions for a project: `chatgpt/instructions.md`.
 
 Full guide per client: [CONNECT.md](CONNECT.md).
 

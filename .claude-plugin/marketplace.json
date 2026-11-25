@@ -4,13 +4,13 @@
     "name": "Viraloop",
     "url": "https://getviraloop.com"
   },
-  "description": "Viraloop plugins for Claude Code: reel auto-editing skill plus the hosted MCP server.",
+  "description": "Viraloop plugin: reel auto-editing skill plus the hosted MCP server.",
   "plugins": [
     {
       "name": "viraloop",
-      "source": "./claude",
+      "source": "./",
       "description": "Viraloop: auto-editing of talking-head reels (pauses, filler words, retakes) from your AI agent via MCP.",
-      "version": "0.2.0"
+      "version": "0.3.0"
     }
   ]
 }
